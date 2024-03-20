@@ -1,9 +1,17 @@
-void setup() {
-  // put your setup code here, to run once:
+#define BUTTON 2
 
+void setup() {
+  pinMode(BUTTON, INPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  buttonClicked();
+}
 
+void buttonClicked() {
+  const bool isButtonLow = digitalRead(BUTTON) == LOW;
+  if (isButtonLow) { return; }
+  else {
+    Serial.println("버튼 클릭");
+  }
 }
