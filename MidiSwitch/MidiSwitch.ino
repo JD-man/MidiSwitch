@@ -1,9 +1,16 @@
+#include <MIDI.h>
+MIDI_CREATE_DEFAULT_INSTANCE();
+
+
 #define BUTTON 2
+#define BAUDRATE 31250
 
 bool isMidiActivating = false;
 
 void setup() {
   pinMode(BUTTON, INPUT);
+  MIDI.begin();
+  Serial.begin(BAUDRATE);
 }
 
 void loop() {
